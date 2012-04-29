@@ -1,8 +1,8 @@
 
-Name:       libXrender
+Name:       libxrender
 Summary:    X.Org X11 libXrender runtime library
 Version:    0.9.6
-Release:    0
+Release:    2.5
 Group:      System/Libraries
 License:    MIT
 URL:        http://www.x.org
@@ -34,9 +34,8 @@ Description: %{summary}
 
 
 %build
-
-%reconfigure \
-	LDFLAGS="-Wl,--hash-style=both -Wl,--as-needed"
+export LDFLAGS+=" -Wl,--hash-style=both -Wl,--as-needed"
+%reconfigure 
 
 # Call make instruction with smp support
 make %{?jobs:-j%jobs}
