@@ -7,6 +7,7 @@ Group:      System/Libraries
 License:    MIT
 URL:        http://www.x.org
 Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.gz
+Source1001: packaging/libxrender.manifest 
 Requires(post):  /sbin/ldconfig
 Requires(postun):  /sbin/ldconfig
 BuildRequires:  pkgconfig(xorg-macros)
@@ -34,6 +35,7 @@ Description: %{summary}
 
 
 %build
+cp %{SOURCE1001} .
 export LDFLAGS+=" -Wl,--hash-style=both -Wl,--as-needed"
 %reconfigure 
 
@@ -57,6 +59,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest libxrender.manifest
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING ChangeLog
 %{_libdir}/libXrender.so.1
@@ -64,6 +67,7 @@ rm -rf %{buildroot}
 
 
 %files devel
+%manifest libxrender.manifest
 %defattr(-,root,root,-)
 %dir %{_includedir}/X11
 %dir %{_includedir}/X11/extensions
