@@ -3,7 +3,7 @@ Name:       libxrender
 Summary:    X.Org X11 libXrender runtime library
 Version:    0.9.6
 Release:    2.5
-Group:      System/Libraries
+Group:      Graphics/X Window System
 License:    MIT
 URL:        http://www.x.org
 Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.gz
@@ -31,7 +31,7 @@ Description: %{summary}
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 
 %build
