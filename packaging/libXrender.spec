@@ -35,7 +35,8 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
+mkdir -p %{buildroot}/usr/share/license
+cp -af COPYING %{buildroot}/usr/share/license/%{name}
 make install DESTDIR=$RPM_BUILD_ROOT
 # undo this, we'll add it ourselves in %%doc
 rm $RPM_BUILD_ROOT/%{_docdir}/*/libXrender.txt
@@ -53,6 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
+/usr/share/license/%{name}
 %doc AUTHORS COPYING ChangeLog
 %{_libdir}/libXrender.so.1
 %{_libdir}/libXrender.so.1.3.0
