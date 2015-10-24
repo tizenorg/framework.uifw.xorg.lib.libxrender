@@ -1,6 +1,6 @@
 Summary: X.Org X11 libXrender runtime library
 Name: libXrender
-Version: 0.9.7
+Version: 0.9.8
 Release: 1
 License: MIT
 Group: System Environment/Libraries
@@ -55,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root,-)
 /usr/share/license/%{name}
-%doc AUTHORS COPYING ChangeLog
+%doc AUTHORS COPYING
 %{_libdir}/libXrender.so.1
 %{_libdir}/libXrender.so.1.3.0
 
